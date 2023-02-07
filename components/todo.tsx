@@ -40,9 +40,10 @@ const Todo:FC = () => {
             return
         }
         if (!todoList[0].hasOwnProperty('todos')) {
-            todoList.push({'todos': {}})
+            todoList.push({'todos': {}} as ITodoList)
         }
-        const newKey = Object.keys(todoList[0]['todos']).length === 0 ? 1 : Math.max(...Object.keys(todoList[0]['todos'])) + 1;
+        let keys = Object.keys(todoList[0]['todos']) as [];
+        const newKey = Object.keys(todoList[0]['todos']).length === 0 ? 1 : Number(Math.max(...keys)) + 1;
         setTodo('');
         setLoad(true)
         const userRef = doc(db, 'todos', currentUser.uid);
