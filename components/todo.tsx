@@ -97,11 +97,11 @@ const Todo:FC = () => {
 
     return (
         <>
-            <div className="py-10 w-full max-w-[65ch] mx-auto flex flex-col gap-3 sm:gap-5 text-xs sm:text-sm">
+            <div className="dark:text-white text-black py-10 w-full max-w-[65ch] mx-auto flex flex-col gap-3 sm:gap-5 text-xs sm:text-sm">
                 {<div className="flex items-stretch">TODO {load && 'loading...'}</div>}
                 <div className="flex items-stretch">
                     <input type='text' placeholder={'text'} value={todo} onChange={e => setTodo(e.target.value)}
-                           className="flex-1 outline-none p-3 text-white text-base sm:test-lg"/>
+                           className="dark:text-white text-black dark:bg-slate-800 bg-white border border-gray-600 flex-1 outline-none p-3 text-base sm:test-lg"/>
                     <button onClick={handleAddTodo}
                             className='w-fit px-4 sm:px-6 py-2 sm:py-3 bg-amber-400 text-white font-medium text-base'>add
                     </button>
